@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class CurrencyConverter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("=== Currency Converter ===");
+
+        System.out.println("Available Currencies:");
+        System.out.println("1. USD to INR");
+        System.out.println("2. INR to USD");
+        System.out.println("3. EUR to INR");
+        System.out.println("4. INR to EUR");
+
+        System.out.print("Choose an option (1-4): ");
+        int option = scanner.nextInt();
+
+        System.out.print("Enter amount: ");
+        double amount = scanner.nextDouble();
+
+        double converted = 0;
+        switch (option) {
+            case 1:
+                converted = amount * 83.20;  // USD to INR (example rate)
+                System.out.println("Converted Amount: ₹" + converted);
+                break;
+            case 2:
+                converted = amount / 83.20;  // INR to USD
+                System.out.println("Converted Amount: $" + converted);
+                break;
+            case 3:
+                converted = amount * 90.75;  // EUR to INR
+                System.out.println("Converted Amount: ₹" + converted);
+                break;
+            case 4:
+                converted = amount / 90.75;  // INR to EUR
+                System.out.println("Converted Amount: €" + converted);
+                break;
+            default:
+                System.out.println("Invalid option selected.");
+        }
+
+        scanner.close();
+    }
+}
